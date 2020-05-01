@@ -3,8 +3,7 @@
 A personal media library for the web.
 
 ### Config DEV db
-[] Fix mongodb in local development
-[] Link to mongodb atlas
+[X] Fix mongodb in local development?
 
 ### Santize app for hosting
 [] Change all project names
@@ -36,6 +35,7 @@ A personal media library for the web.
 ### Feature development
 [] Add link db schema and client CRUD
 [] Add new client 
+[] Mobile pull to refresh
 
 ---
 
