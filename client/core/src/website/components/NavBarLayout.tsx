@@ -10,6 +10,7 @@ import { FormattedMessage } from "react-intl";
 import MenuFab from "./shared/MenuFab";
 import Notification from "../../models/Notification";
 import { ComponentProps } from "../../shared/ComponentProps";
+import UserAvatar from "./user/UserAvatar";
 
 interface Props extends ComponentProps {
     containerRef: RefObject<any>;
@@ -52,10 +53,13 @@ class NavBarLayout extends React.Component<Props, States> {
     }
 
     private renderMenuForDesktop = (): React.ReactElement<any> => {
+        // const user: User | undefined = this.props.state.userState.currentUser;
+        // const user: User = this.props.state.userState.currentUser;
         return <Fragment>
             <Menu.Item
                 as={Link}
                 exact="true" to="/">
+                {/* <UserAvatar user={user} /> */}
                 <img src="/favicon.png" alt="logo" style={{marginRight: 10}}/>
                 <FormattedMessage id="app.name"/>
             </Menu.Item>
@@ -151,10 +155,10 @@ class NavBarLayout extends React.Component<Props, States> {
                     <Dropdown.Item as={NavLink} to="/profile">
                         <FormattedMessage id="page.me.profile"/>
                     </Dropdown.Item>
-                    <Dropdown.Item as={NavLink} to="/preferences">
+                    {/* <Dropdown.Item as={NavLink} to="/preferences">
                         <FormattedMessage id="page.me.preferences"/>
-                    </Dropdown.Item>
-                    <Dropdown.Item as={NavLink} to="/notifications"
+                    </Dropdown.Item> */}
+                    {/* <Dropdown.Item as={NavLink} to="/notifications"
                         style={{
                             display: "flex",
                             flexDirection: "row",
@@ -168,7 +172,7 @@ class NavBarLayout extends React.Component<Props, States> {
                                 </Label>
                                 : undefined
                         }
-                    </Dropdown.Item>
+                    </Dropdown.Item> */}
                     <Dropdown.Divider />
                     <Dropdown.Item as={NavLink} to="/security">
                         <FormattedMessage id="page.me.security"/>

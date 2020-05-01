@@ -67,7 +67,7 @@ class App extends React.Component<Props, States> {
                                 />
                             </Switch>
                         </main>
-                        <Footer />
+                        {/* <Footer /> */}
                     </NavBarLayout>
                 } />
             </div>

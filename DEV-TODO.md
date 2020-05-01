@@ -4,8 +4,11 @@ A personal media library for the web.
 
 ### Santize clients for hosting 1
 [X] Change all project names
-[X] Disable about page mobile
-[] Disable about page desktop
+[X] Disable about page native
+[X] Disable about page web
+[X] Disable footer web
+<!-- [] User icon on page mobile
+[] User icon on page web -->
 [] Remove all UX flow except for signup
 [] Keep profile view + user verification 
 [] Add fonts
