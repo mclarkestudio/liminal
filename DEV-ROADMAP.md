@@ -40,6 +40,8 @@ In reverse coronological order:
 
   ⚙️ Using TypeScript MERN Starter, deploy a user authorized, restfull application across [device platforms](#device-platforms) in order to **iteratively develop Liminal.**
 
+  📐 Santize MERN starter for deployment.
+
 ### `Hello, world.`
 
 `[Thursday, April 30, 2020]`
