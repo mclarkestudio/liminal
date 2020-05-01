@@ -2,20 +2,19 @@
 
 A personal media library for the web.
 
-### Santize clients for hosting 1
-[] Change all project names
+### Santize clients for hosting
+[X] Change all project names
 [] Design and add simple logo
 [] Add favicon
-[] Remove all graphics and extra copy
-   - Web client
-   - Mobile client(s)
-[] Remove most page routes
+[] Remove all UX flow except for signup
 [] Keep profile view + user verification
 
-### Santize server for hosting 2
+### Santize server for hosting 1
 [] Remove public display of data?
    - User only sees articles once logged in
    - Need to see how db is configured
+
+### Santize server for hosting 2
 [] Remove gender from user schema
 [] Remove min cap on message input
 [] Remove max cap on title input
@@ -39,6 +38,13 @@ Day End
 [] Add chrome extension to starter
 [] Add electron build to starter
 
+### Add exsisting server functions to this node server
+[] RSS
+[] Open Graph
+[] History store
+
+### Auth features
+[] Add chrome signup button
 
 ---
 

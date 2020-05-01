@@ -5,7 +5,7 @@ const TRANSLATION: Translation = {
     locale: "en-US",
     messages: {
         // App basic info
-        "app.name": "Typescript MERN Starter",
+        "app.name": "Liminal",
         "app.footer": "Copyright © 2020 Company, Inc. All Rights Reserved.",
         "app.connect_error": "Failed to fetch", // Do not change this phrase, it is used as keywords.
 

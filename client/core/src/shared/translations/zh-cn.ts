@@ -5,7 +5,7 @@ const TRANSLATION: Translation = {
     locale: "zh-CN",
     messages: {
         // App basic info
-        "app.name": "Typescript MERN Starter",
+        "app.name": "Liminal",
         "app.footer": "Copyright © 2020 公司版权所有",
         "app.connect_error": "无法连接服务器",
 
