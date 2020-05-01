@@ -2,16 +2,19 @@
 
 A personal media library for the web.
 
-### Santize clients for hosting
+### Santize clients for hosting 1
 [X] Change all project names
+[] Remove all UX flow except for signup
+[] Keep profile view + user verification 
+[] Add fonts
+
+### Santize clients for hosting 2
 [] Design and add simple logo
 [] Add favicon
-[] Remove all UX flow except for signup
-[] Keep profile view + user verification
 
 ### Santize server for hosting 1
 [] Remove public display of data?
-   - User only sees articles once logged in
+   - User only sees articles once authd
    - Need to see how db is configured
 
 ### Santize server for hosting 2
@@ -34,11 +37,14 @@ A personal media library for the web.
 
 Day End
 
+
+
+
 ### Extend device support
 [] Add chrome extension to starter
 [] Add electron build to starter
 
-### Add exsisting server functions to this node server
+### Add exsisting server functions
 [] RSS
 [] Open Graph
 [] History store

@@ -7,7 +7,7 @@ export default class TabNavigator extends React.Component<any, any> {
         return (<Footer>
             <FooterTab>
                 <NavLink to="/article" textId="page.home" icon="home"/>
-                <NavLink to="/about" textId="page.about" icon="information-circle"/>
+                {/* <NavLink to="/about" textId="page.about" icon="information-circle"/> */}
                 <NavLink to="/me" textId="page.me" icon="person"/>
             </FooterTab>
         </Footer>);

@@ -43,3 +43,9 @@ Android colors
 Web
 Favicon
 
+## Develop
+
+Need a new screen?
+[Add a Mobile Route](./client/src/Routes.tsx)
+Add a Web Route
+
