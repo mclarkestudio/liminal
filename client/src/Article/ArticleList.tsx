@@ -15,25 +15,29 @@ class ArticleList extends React.Component<Props, States> {
     }
     render(): any {
         const match: match<any> = this.props.match;
-        return <Fragment>
-            <Header noLeft>
-                <Body>
-                    <Title><FormattedMessage id="app.name"/></Title>
-                </Body>
-            </Header>
-            <Content style={{backgroundColor: "#F0F0F0"}}>
-                <List >
-                    {
-                        this.props.state.articleState.data.map(
-                            (value: Article) => (<ArticleItem value={value} key={value._id} />)
-                        )
-                    }
-                </List>
-            </Content>
-            {this.renderAddButton()}
-            {/* only show Footer in list page, do not show Footer in detail page */}
-            <Route exact path={match.url} component={TabNavigator} />
-        </Fragment>;
+        if (this.props.state.userState.currentUser) {
+            return <Fragment>
+                <Header noLeft>
+                    <Body>
+                        <Title><FormattedMessage id="app.name"/></Title>
+                    </Body>
+                </Header>
+                <Content style={{backgroundColor: "#F0F0F0"}}>
+                    <List >
+                        {
+                            this.props.state.articleState.data.map(
+                                (value: Article) => (<ArticleItem value={value} key={value._id} />)
+                            )
+                        }
+                    </List>
+                </Content>
+                {this.renderAddButton()}
+                {/* only show Footer in list page, do not show Footer in detail page */}
+                <Route exact path={match.url} component={TabNavigator} />
+            </Fragment>;
+        } else {
+            return undefined;
+        }
     }
 
     private renderAddButton = (): any => {

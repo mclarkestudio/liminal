@@ -4,6 +4,12 @@ A personal media library for the web.
 
 [] Face login mobile
 
+
+### Santize server for hosting 1
+[X] Remove public display of data?
+   - User only sees articles once authd
+   - Need to see how db is configured as well
+
 ### Santize clients for hosting 1
 [X] Change all project names
 [X] Disable about page native
@@ -11,10 +17,10 @@ A personal media library for the web.
 [X] Disable footer web
 <!-- [] User icon on page mobile
 [] User icon on page web -->
-[] Remove all UX flow except for signup
-[] Move change password to profile
-[] Disable article ui and prefs
-[] Keep profile view + user verification 
+[] Remove all UX flow except for signup?
+[X] Disable article ui and prefs
+[X] Keep profile view + user verification 
+[] Add home button
 [] Add fonts
 
 ### Santize clients for hosting 2
@@ -22,10 +28,7 @@ A personal media library for the web.
 [] Add favicon
 [] Disbale Signin Login if Authd
 
-### Santize server for hosting 1
-[] Remove public display of data?
-   - User only sees articles once authd
-   - Need to see how db is configured
+
 
 ### Santize server for hosting 2
 [] Remove gender from user schema
