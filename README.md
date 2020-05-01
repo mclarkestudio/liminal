@@ -8,7 +8,7 @@ For a product roadmap, see: [./DEV-ROADMAP.md](./DEV-ROADMAP.md)
 
 <!-- New technical set up guide goes here -->
 
-# Local development
+## Local development
 
 `yarn start`
 
@@ -23,3 +23,6 @@ https://github.com/mclarkestudio/liminal
 https://cloud.mongodb.com  
 
 @TODO: these could auto open on `yart start` to be truly full stack, one command  
+
+## Entry Points
+
