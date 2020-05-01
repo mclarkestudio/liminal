@@ -59,10 +59,10 @@ class NavBarLayout extends React.Component<Props, States> {
                 <img src="/favicon.png" alt="logo" style={{marginRight: 10}}/>
                 <FormattedMessage id="app.name"/>
             </Menu.Item>
-            <Menu.Item as={NavLink} to="/about" >
+            {/* <Menu.Item as={NavLink} to="/about" >
                 <FormattedMessage id="page.about"/>
-            </Menu.Item>
-            {/* Add more nav items here */}
+            </Menu.Item> */}
+            {/* @DESIGN Add more nav items here */}
         </Fragment>;
     }
 
@@ -73,13 +73,13 @@ class NavBarLayout extends React.Component<Props, States> {
                     borderless style={{border: 0, borderRadius: 0, zIndex: 999}}>
                     {this.renderDimmer()}
                     <Menu.Item as={Button} onClick={this.showSideBar}>
-                        <Icon name="sidebar" style={{marginRight: 10}}/>
+                        {/* <Icon name="sidebar" style={{marginRight: 10}}/> */}
                         <FormattedMessage id="app.name"/>
                     </Menu.Item>
                     {this.renderAccountControl()}
                 </Dimmer.Dimmable>
             </Sticky>
-            {this.renderMenuForMobile()}
+            {/* {this.renderMenuForMobile()} */}
             <Sidebar.Pushable raised="true" style={WRAPPER_VIEW_STYLE} >
                 <Sidebar.Pusher dimmed={false} style={WRAPPER_VIEW_STYLE}>
                     <Dimmer.Dimmable dimmed={this.state.sidebarVisible} style={WRAPPER_VIEW_STYLE}>

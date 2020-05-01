@@ -36,6 +36,12 @@ https://cloud.mongodb.com/
 
 ## Design
 
+Search `@DESIGN` to find where to add new display components.
+
+Libraries to remove:
+Semantic-ui
+native-base
+
 Mobile
 Expo Splashscreen
 Android colors
@@ -43,7 +49,7 @@ Android colors
 Web
 Favicon
 
-## Develop
+## Development Patterns
 
 Need a new screen?
 [Add a Mobile Route](./client/src/Routes.tsx)

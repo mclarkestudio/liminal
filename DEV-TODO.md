@@ -4,6 +4,8 @@ A personal media library for the web.
 
 ### Santize clients for hosting 1
 [X] Change all project names
+[X] Disable about page mobile
+[] Disable about page desktop
 [] Remove all UX flow except for signup
 [] Keep profile view + user verification 
 [] Add fonts
@@ -11,6 +13,7 @@ A personal media library for the web.
 ### Santize clients for hosting 2
 [] Design and add simple logo
 [] Add favicon
+[] Disbale Signin Login if Authd
 
 ### Santize server for hosting 1
 [] Remove public display of data?
@@ -36,8 +39,6 @@ A personal media library for the web.
 [] Mobile pull to refresh
 
 Day End
-
-
 
 
 ### Extend device support
