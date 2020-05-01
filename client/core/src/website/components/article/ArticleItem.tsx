@@ -24,19 +24,19 @@ class ArticleItem extends React.Component<Props, States> {
         const createDate: Date = article.createdAt ? new Date(article.createdAt) : new Date(0);
         const previewContent: string = getArticleAbstract(article.content, ARTICLE_CONTENT_MIN_LENGTH);
         const coverSrc: string = getArticleCoverImage(article.content);
-        return <Segment key={createDate.getMilliseconds()}>
+        return <div key={createDate.getMilliseconds()}>
             <Item>
-                <Item.Content>
+                {/* <Item.Content> */}
                     <Item.Header as="h2">{article.title}</Item.Header>
-                    <Item.Meta>
+                    {/* <Item.Meta>
                         <UserLabel user={this.props.state.userDictionary[article.author]} />
                     </Item.Meta>
                     {
                         coverSrc ? <Image style={{paddingTop: 10}} src={coverSrc} />
                         : undefined
-                    }
-                    <Viewer style={{height: 3}} initialValue={previewContent + "..."} />
-                    <Item.Extra style={{
+                    } */}
+                    <Viewer style={{height: 6}} initialValue={previewContent + "..."} />
+                    {/* <Item.Extra style={{
                         display: "flex",
                         flexDirection: "row",
                         justifyContent: "space-between"}}>
@@ -44,10 +44,10 @@ class ArticleItem extends React.Component<Props, States> {
                             {moment(createDate).fromNow()}
                         </div>
                         {this.renderSeeAllButton(article)}
-                    </Item.Extra>
-                </Item.Content>
+                    </Item.Extra> */}
+                {/* </Item.Content> */}
             </Item>
-        </Segment>;
+        </div>;
     }
     private renderSeeAllButton = (article: Article): React.ReactElement<any> | undefined => {
         const uri: string = `/article/${article._id}`;

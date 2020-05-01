@@ -44,7 +44,7 @@ class NavBarLayout extends React.Component<Props, States> {
         return <ResponsiveDesktop>
             <Sticky context={this.props.containerRef}>
                 <Menu borderless style={{border: 0, borderRadius: 0}}>
-                    {this.renderMenuForDesktop()}
+                    {/* {this.renderMenuForDesktop()} */}
                     {this.renderAccountControl()}
                 </Menu>
             </Sticky>
@@ -60,6 +60,7 @@ class NavBarLayout extends React.Component<Props, States> {
                 as={Link}
                 exact="true" to="/">
                 {/* <UserAvatar user={user} /> */}
+                
                 <img src="/favicon.png" alt="logo" style={{marginRight: 10}}/>
                 <FormattedMessage id="app.name"/>
             </Menu.Item>
@@ -147,7 +148,7 @@ class NavBarLayout extends React.Component<Props, States> {
                 {user.name}
             </span>
         );
-        return <Menu.Menu position="right">
+        return <Menu.Menu position="left">
             <Dropdown trigger={trigger}
                 pointing="top left"
                 className="link item">
@@ -186,7 +187,7 @@ class NavBarLayout extends React.Component<Props, States> {
     }
 
     private renderAccountTabsBeforeLoggedIn = (): React.ReactElement<any> => {
-        return <Menu.Menu position="right">
+        return <Menu.Menu position="left">
             <Menu.Item
                 as={NavLink}
                 to="/login/" >

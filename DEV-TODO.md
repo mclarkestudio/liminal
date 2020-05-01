@@ -2,6 +2,8 @@
 
 A personal media library for the web.
 
+[] Face login mobile
+
 ### Santize clients for hosting 1
 [X] Change all project names
 [X] Disable about page native
@@ -10,6 +12,8 @@ A personal media library for the web.
 <!-- [] User icon on page mobile
 [] User icon on page web -->
 [] Remove all UX flow except for signup
+[] Move change password to profile
+[] Disable article ui and prefs
 [] Keep profile view + user verification 
 [] Add fonts
 
