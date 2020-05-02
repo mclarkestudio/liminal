@@ -11,16 +11,21 @@ import { FormattedMessage } from "react-intl";
 import FabAction from "../../../models/client/FabAction";
 import NothingMoreFooter from "../shared/NothingMoreFooter";
 import { ComponentProps as Props } from "../../../shared/ComponentProps";
+import { Redirect } from "react-router";
 
 interface States {}
 
 class ArticleList extends React.Component<Props, States> {
     render(): React.ReactElement<any> {
-        return <Container text style={CONTAINER_STYLE}>
-            {this.renderCreateArticleSection()}
-            {this.renderArticles()}
-            {this.renderLoadMore()}
-        </Container>;
+        if (this.props.state.userState.currentUser) {
+            return <Container text style={CONTAINER_STYLE}>
+                {this.renderCreateArticleSection()}
+                {this.renderArticles()}
+                {this.renderLoadMore()}
+            </Container>;
+        } else {
+            return <Redirect to="/login" />;
+        }
     }
     componentDidMount() {
         this.props.actions.resetRedirectTask();
