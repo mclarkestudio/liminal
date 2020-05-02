@@ -10,7 +10,11 @@ class Home extends React.Component<Props, States> {
         this.props.actions.authenticate();
     }
     render(): any {
-        return <Redirect to="/article" />;
+        if (this.props.state.userState.currentUser) {
+            return <Redirect to="/article" />;
+        } else {
+            return <Redirect to ='/login' />;
+        }
     }
 }
 

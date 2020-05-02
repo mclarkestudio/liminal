@@ -15,7 +15,6 @@ class ArticleList extends React.Component<Props, States> {
     }
     render(): any {
         const match: match<any> = this.props.match;
-        if (this.props.state.userState.currentUser) {
             return <Fragment>
                 <Header noLeft>
                     <Body>
@@ -35,9 +34,6 @@ class ArticleList extends React.Component<Props, States> {
                 {/* only show Footer in list page, do not show Footer in detail page */}
                 <Route exact path={match.url} component={TabNavigator} />
             </Fragment>;
-        } else {
-            return undefined;
-        }
     }
 
     private renderAddButton = (): any => {

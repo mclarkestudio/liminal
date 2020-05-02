@@ -22,7 +22,7 @@ class ArticleItem extends React.Component<Props, States> {
     render(): React.ReactElement<any> {
         const { article } = this.props;
         const createDate: Date = article.createdAt ? new Date(article.createdAt) : new Date(0);
-        const previewContent: string = getArticleAbstract(article.content, ARTICLE_CONTENT_MIN_LENGTH);
+        const previewContent: string = getArticleAbstract(article.content, 150); // ARTICLE_CONTENT_MIN_LENGTH
         const coverSrc: string = getArticleCoverImage(article.content);
         return <div key={createDate.getMilliseconds()}>
             <Item>

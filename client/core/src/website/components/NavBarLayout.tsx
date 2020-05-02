@@ -44,7 +44,7 @@ class NavBarLayout extends React.Component<Props, States> {
         return <ResponsiveDesktop>
             <Sticky context={this.props.containerRef}>
                 <Menu borderless style={{border: 0, borderRadius: 0}}>
-                    {/* {this.renderMenuForDesktop()} */}
+                    {this.renderMenuForDesktop()}
                     {this.renderAccountControl()}
                 </Menu>
             </Sticky>
@@ -55,7 +55,7 @@ class NavBarLayout extends React.Component<Props, States> {
     private renderMenuForDesktop = (): React.ReactElement<any> => {
         // const user: User | undefined = this.props.state.userState.currentUser;
         // const user: User = this.props.state.userState.currentUser;
-        return <Fragment>
+        return <div style={{ marginLeft: 'auto', marginRight: 'auto' }}>
             <Menu.Item
                 as={Link}
                 exact="true" to="/">
@@ -68,7 +68,7 @@ class NavBarLayout extends React.Component<Props, States> {
                 <FormattedMessage id="page.about"/>
             </Menu.Item> */}
             {/* @DESIGN Add more nav items here */}
-        </Fragment>;
+        </div>;
     }
 
     private renderForMobile = (): React.ReactElement<any> => {

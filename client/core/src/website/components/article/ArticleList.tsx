@@ -38,17 +38,21 @@ class ArticleList extends React.Component<Props, States> {
         this.props.actions.setFabActions([]);
     }
     private renderArticles = (): React.ReactElement<any> => {
-        if (this.props.state.articleState.loading) {
-            return <Loading />;
-        } else {
-            return <Fragment>
-            {
-                this.props.state.articleState.data
-                .sort(byCreatedAtLatestFirst).map(
-                    (article: Article) => <ArticleItem key={article._id} article={article} />
-                )
+        if (this.props.state.userState.currentUser) {
+            if (this.props.state.articleState.loading) {
+                return <Loading />;
+            } else {
+                return <Fragment>
+                {
+                    this.props.state.articleState.data
+                    .sort(byCreatedAtLatestFirst).map(
+                        (article: Article) => <ArticleItem key={article._id} article={article} />
+                    )
+                }
+                </Fragment>;
             }
-            </Fragment>;
+        } else {
+            return <Fragment></Fragment>;
         }
     }
     private addFabActions = (): void => {
@@ -64,46 +68,48 @@ class ArticleList extends React.Component<Props, States> {
     }
     private renderCreateArticleSection = (): React.ReactElement<any> | undefined => {
         const articles: Article [] = this.props.state.articleState.data;
-        if (this.props.state.articleState.loading) {
-            return <Loading />;
-        } else if (this.props.state.userState.currentUser) {
-            if (!articles || articles.length === 0) {
-                return <Segment placeholder>
-                    <Header icon>
-                    <Icon name="edit outline" />
-                    <FormattedMessage id="page.article.empty" />
-                    </Header>
-                </Segment>;
-            }
-        } else {
-            if (articles && articles.length > 0) {
-                return undefined;
+            if (this.props.state.articleState.loading) {
+                return <Loading />;
+            } else if (this.props.state.userState.currentUser) {
+                if (!articles || articles.length === 0) {
+                    return <Segment placeholder>
+                        <Header icon>
+                        <Icon name="edit outline" />
+                        <FormattedMessage id="page.article.empty" />
+                        </Header>
+                    </Segment>;
+                }
             } else {
-                return <GitHubLink />;
+                if (articles && articles.length > 0) {
+                    return undefined;
+                } else {
+                    return <GitHubLink />;
+                }
             }
-        }
     }
 
     private renderLoadMore = (): React.ReactElement<any> | undefined => {
         const articles: Article [] = this.props.state.articleState.data;
-        if (this.props.state.articleState.hasMore) {
-            const loadingMore: boolean | undefined = this.props.state.articleState.loadingMore;
-            const createdAt: string | undefined = articles[articles.length - 1].createdAt;
-            if (!createdAt) {
+        if (this.props.state.userState.currentUser) {
+            if (this.props.state.articleState.hasMore) {
+                const loadingMore: boolean | undefined = this.props.state.articleState.loadingMore;
+                const createdAt: string | undefined = articles[articles.length - 1].createdAt;
+                if (!createdAt) {
+                    return undefined;
+                }
+                return <Button fluid basic
+                    onClick={() => { this.loadMore(createdAt); }}
+                    loading={loadingMore}
+                    disabled={loadingMore} >
+                    <Button.Content>
+                        <FormattedMessage id="page.article.load_more" />
+                    </Button.Content>
+                </Button>;
+            } else if (articles.length > 0) {
+                return <NothingMoreFooter />;
+            } else {
                 return undefined;
             }
-            return <Button fluid basic
-                onClick={() => { this.loadMore(createdAt); }}
-                loading={loadingMore}
-                disabled={loadingMore} >
-                <Button.Content>
-                    <FormattedMessage id="page.article.load_more" />
-                </Button.Content>
-            </Button>;
-        } else if (articles.length > 0) {
-            return <NothingMoreFooter />;
-        } else {
-            return undefined;
         }
     }
 

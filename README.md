@@ -55,3 +55,5 @@ Need a new screen?
 [Add a Mobile Route](./client/src/Routes.tsx)
 Add a Web Route
 
+Update global settings?
+[Edit a constant](./client/core/src/shared/constants.ts)
