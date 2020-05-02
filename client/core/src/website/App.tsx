@@ -46,6 +46,12 @@ class App extends React.Component<Props, States> {
                     <NavBarLayout {...props} containerRef={this.contextRef}>
                         <main style={WRAPPER_VIEW_STYLE} >
                             <Switch>
+
+                            {/* <Route exact path={match.url} render={(props) => <ArticleList {...props} />} />
+                                <Route path={`${match.url}/create`} render={(props) => <CreateArticle {...props} />} />
+                                <Route path={`${match.url}/edit/:articleId`} render={(props) => <EditArticle {...props} />} />
+                                <Route path={`${match.url}/:articleId`} render={(props) => <ArticleDetail {...props} />} /> */}
+
                                 <Route exact path="/" render={ (props) => <Home {...props} /> } />
                                 <Route path="/login" render={ (props) => <LogIn {...props} /> } />
                                 <Route path="/signup" render={ (props) => <SignUp {...props} /> } />
