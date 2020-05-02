@@ -18,7 +18,7 @@ class LogIn extends Component<Props, States> {
         } else if (!this.props.state.userState.currentUser) {
             const loading: boolean = this.props.state.userState.loading;
             return (<Container>
-                <HeaderWithBack titleId="page.me.login"/>
+                <HeaderWithBack disableBackButton titleId="page.me.login"/>
                 <Content padder>
                     <Form>
                         <Item last>

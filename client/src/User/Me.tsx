@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { Text, Header, Content, Body, ListItem, Left, Button, Icon, Right, Separator, Thumbnail } from "native-base";
 import TabNavigator from "../Nav/TabNavigator";
-import { Link } from "react-router-native";
+import { Link, Redirect } from "react-router-native";
 import UserModel from "../../core/src/models/User";
 import connectAllProps from "../../core/src/shared/connect";
 import { getAvatarSource } from "../../core/src/shared/image";
@@ -13,13 +13,15 @@ interface States {}
 class Me extends React.Component<Props, States> {
     render(): React.ReactElement<any> {
         if (!this.props.state.userState.currentUser) {
-            return <Fragment>
-                <Header noLeft />
-                    {
-                        this.renderBeforeLoggedIn()
-                    }
-                <TabNavigator/>
-            </Fragment>;
+            return <Redirect to='/login' />;
+            
+            // <Fragment>
+            //     <Header noLeft />
+            //         {
+            //             this.renderBeforeLoggedIn()
+            //         }
+            //     <TabNavigator/>
+            // </Fragment>;
         } else {
             return <Fragment>
             <Header noLeft />
