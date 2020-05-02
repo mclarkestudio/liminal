@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { match, Route, Switch } from "react-router-native";
+import { match, Route, Switch, Redirect } from "react-router-native";
 import ArticleDetail from "./ArticleDetail";
 import ArticleList from "./ArticleList";
 import CreateArticle from "./CreateArticle";
@@ -21,14 +21,18 @@ class Articles extends React.Component<Props, States> {
     }
     render(): any {
         const match: match<any> = this.props.match;
-        return <Fragment>
-            <Switch>
-                <Route exact path={match.url} render={(props) => <ArticleList {...props} />} />
-                <Route path={`${match.url}/create`} render={(props) => <CreateArticle {...props} />} />
-                <Route path={`${match.url}/edit/:articleId`} render={(props) => <EditArticle {...props} />} />
-                <Route path={`${match.url}/:articleId`} render={(props) => <ArticleDetail {...props} />} />
-            </Switch>
-        </Fragment>;
+        if (this.props.state.userState.currentUser) {
+            return <Fragment>
+                <Switch>
+                    <Route exact path={match.url} render={(props) => <ArticleList {...props} />} />
+                    <Route path={`${match.url}/create`} render={(props) => <CreateArticle {...props} />} />
+                    <Route path={`${match.url}/edit/:articleId`} render={(props) => <EditArticle {...props} />} />
+                    <Route path={`${match.url}/:articleId`} render={(props) => <ArticleDetail {...props} />} />
+                </Switch>
+            </Fragment>;
+        } else {
+            return <Redirect to="/login" />;
+        }
     }
 }
 
